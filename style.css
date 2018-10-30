@@ -1,0 +1,47 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	background-color: #16536D;
+	display: grid;
+	grid-template-columns: 6vw 13.5vw 13.5vw 2vw 29.5vw 29.5vw 6vw;
+	grid-template-rows: auto;
+	padding-top: 2vw;
+}
+
+#profileInfo {
+	grid-column-start: 2; 
+	grid-column-end: 4;
+	background-color: #00FFC4;
+	padding: 2vw;
+}
+
+#profileExperience {
+	grid-column-start: 5; 
+	grid-column-end: 7;
+	background-color: #00FFC4;
+	padding: 2vw;
+}
+
+#profilePicture {
+	width: 23vw;
+	height: 23vw;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+#profilePicture img{
+	height: 100%;
+	width: auto;
+	margin-left: -8%;
+}
+
+footer {
+	grid-column-start: 2; 
+	grid-column-end: 7;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+}
