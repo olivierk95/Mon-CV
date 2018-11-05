@@ -109,6 +109,10 @@ li {
 	padding-top: 1vw;
 }
 
+.infos {
+	text-align: right;
+}
+
 .interest {
 	display: flex;
 	text-align: center;
@@ -121,9 +125,47 @@ li {
 	height: auto;
 }
 
-.textTitle {
-	font-family: bold;
+.columns {
+	display: flex;
 }
+
+.textBox {
+	padding-top: 1vw;
+}
+
+.text1 {
+	color: #16536D;
+	font-size: 1.6vw;
+}
+
+.text2 {
+	color: white;
+	font-size: 1.5vw;
+}
+
+.text3 {
+	font-size: 1.3vw;
+}
+
+.text4 {
+	font-size: 1.3vw;
+}
+
+.leftColumn {
+	padding-right: 5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
