@@ -33,8 +33,8 @@ h2 {
 	overflow: hidden;
 	white-space: nowrap;
 	animation: 
-		typing 3s steps(30, end),
-		blink-caret .8s step-end 7; 
+		typing 2s steps(30, end),
+		blink-caret .6s step-end 7; 
 	animation-fill-mode: forwards;
 }
 
@@ -42,8 +42,8 @@ h2 {
 	overflow: hidden;
 	white-space: nowrap;
 	animation: 
-		typing 2.5s 6s steps(28, end),
-		blink-caret .8s step-end 15;
+		typing 1.5s 4s steps(28, end),
+		blink-caret .6s step-end 13;
 	animation-fill-mode: forwards;
 	opacity: 0;
 }
@@ -76,19 +76,21 @@ header span {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
 }
 
 .profile-picture img {
 	height: auto;
-	max-width: 20rem;
+	max-width: 18rem;
 }
 
 #hair {
-	position: relative;
-	right: .9rem;
+	position: absolute;
+	right: -8.1rem;
 	z-index: 5;
 	transform: rotate(-15deg);
 	transition-duration: 1s;
+	transform-style: preserve-3d;
 }
 
 #hair:hover {
@@ -97,17 +99,26 @@ header span {
 }
 
 #eyes {
-	position: relative;
-	top: -3.5rem;
+	position: absolute;
+	top: 7rem;
 	z-index: 4;
+	transform-style: preserve-3d;
+	animation: floatingEyes 5s 5s ease-in-out infinite alternate backwards;
+}
+
+@keyframes floatingEyes {
+	50% {top: 7rem;}
+	100% {top: 8.5rem;}
 }
 
 #nose {
-	position: relative;
-	top: -8rem;
+	position: absolute;
+	top: 13rem;
 	z-index: 3;
 	transform: rotate(-5deg);
 	transition-duration: 1s;
+	transform-style: preserve-3d;
+	animation: floatingNose 5s 5s ease-in-out infinite alternate backwards;
 }
 
 #nose:hover {
@@ -115,12 +126,19 @@ header span {
 	transform-origin: 10% 30%;
 }
 
+@keyframes floatingNose {
+	50% {top: 13rem;}
+	100% {top: 16rem;}
+}
+
 #mouth {
-	position: relative;
-	top: -12.1rem;
+	position: absolute;
+	top: 19.5rem;
 	z-index: 2;
 	transform: rotate(7deg);
 	transition-duration: 1s;
+	transform-style: preserve-3d;
+	animation: floatingMouth 5s 5s ease-in-out infinite alternate backwards;
 }
 
 #mouth:hover {
@@ -128,10 +146,22 @@ header span {
 	transform-origin: 10% 30%;
 }
 
+@keyframes floatingMouth {
+	50% {top: 19.5rem;}
+	100% {top: 24rem;}
+}
+
 #shadow {
-	position: relative;
-	top: -15rem;
+	position: absolute;
+	top: 29rem;
 	z-index: 1;
+	animation: shadowing 5s 5s ease-in-out infinite alternate backwards;
+	max-width: 16rem;
+}
+
+@keyframes shadowing {
+	50% {max-width: 16rem;}
+	100% {max-width: 20rem;}
 }
 
 /* LAST PART - FOOTER */
