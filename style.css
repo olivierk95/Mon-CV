@@ -6,14 +6,7 @@
 
 body {
 	background: linear-gradient(to right, rgba(201,201,201,1) 0%, rgba(246,246,246,1) 50%, rgba(201,201,201,1) 100%);
-}
-
-/* FIRST PART - HEADER */
-header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 1.2rem;
+	height: 50rem;
 }
 
 h1 {
@@ -28,23 +21,50 @@ h2 {
 	font-weight: 300;
 }
 
+h5 {
+	font-weight: 300;
+}
+
+/* FIRST PART - HEADER */
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1.2rem;
+}
 
 .typewriter h1 {
 	overflow: hidden;
 	white-space: nowrap;
 	animation: 
 		typing 2s steps(30, end),
-		blink-caret .6s step-end 7; 
-	animation-fill-mode: forwards;
+		blink-caret .6s step-end 7 forwards; 
 }
 
-.typewriter h2 {
+.secondtypewriter .typewriter {
 	overflow: hidden;
 	white-space: nowrap;
 	animation: 
-		typing 1.5s 4s steps(28, end),
+		typing 1.5s 4s steps(22, end) forwards,
 		blink-caret .6s step-end 13;
-	animation-fill-mode: forwards;
+	opacity: 0;
+}
+
+.secondtypewriter {
+	display: flex;
+}
+
+.secondtypewriter span {
+	animation: lineThrough 10s 5s backwards;
+}
+
+.end {
+	overflow: hidden;
+	white-space: nowrap;
+	animation: 
+		typing .5s 10s steps(5, end) forwards,
+		blink-caret .6s step-end 13;
 	opacity: 0;
 }
 
@@ -59,109 +79,133 @@ h2 {
 	100% {border-right: none}
 }
 
-header span {
-	text-decoration: line-through;
+@keyframes lineThrough {
+	0% {background-color: #00B6B2; text-decoration: none;}
+	100% {text-decoration: line-through; background-color: #00B6B2;}
 }
+
 
 /* SECOND PART - CONTENT */
 
 .content {
 	display: flex;
-	width: 100%;
-	justify-content: space-around;
 }
 
+	/* LEFT SIDE */
+	.info-left {
+		width: 34vw;
+		margin-left: 3rem;
+	}
 
-.profile-picture {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
-}
+	.title {
+		background-color: #DE3845;
+		color: white;
+		font-size: 1rem;
+		font-style: italic;
+		width: fit-content;
+		margin-bottom: .6rem;
+	}
 
-.profile-picture img {
-	height: auto;
-	max-width: 18rem;
-}
+	/* RIGHT SIDE */
 
-#hair {
-	position: absolute;
-	right: -8.1rem;
-	z-index: 5;
-	transform: rotate(-15deg);
-	transition-duration: 1s;
-	transform-style: preserve-3d;
-}
+	.info-right {
+		width: 34vw;
+		margin-right: 3rem;
+	}
 
-#hair:hover {
-	transform: rotate(0deg) translateX(.9rem) translateY(1.2rem);
-	transform-origin: 10% 30%;
-}
+	/* PROFILE PICTURE */
 
-#eyes {
-	position: absolute;
-	top: 7rem;
-	z-index: 4;
-	transform-style: preserve-3d;
-	animation: floatingEyes 5s 5s ease-in-out infinite alternate backwards;
-}
+	.profile-picture {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		width: 32vw;
+		height: 30rem;
+	}
 
-@keyframes floatingEyes {
-	50% {top: 7rem;}
-	100% {top: 8.5rem;}
-}
+	.profile-picture img {
+		height: auto;
+		max-width: 18rem;
+	}
 
-#nose {
-	position: absolute;
-	top: 13rem;
-	z-index: 3;
-	transform: rotate(-5deg);
-	transition-duration: 1s;
-	transform-style: preserve-3d;
-	animation: floatingNose 5s 5s ease-in-out infinite alternate backwards;
-}
+	#hair {
+		position: absolute;
+		z-index: 5;
+		transform: rotate(-15deg) translateX(-.9rem);
+		transition-duration: 1s;
+		transform-style: preserve-3d;
+	}
 
-#nose:hover {
-	transform: rotate(0deg) translateX(-.1rem) translateY(-1rem);
-	transform-origin: 10% 30%;
-}
+	#hair:hover {
+		transform: rotate(0deg) translateX(0rem) translateY(1.2rem);
+		transform-origin: 10% 30%;
+	}
 
-@keyframes floatingNose {
-	50% {top: 13rem;}
-	100% {top: 16rem;}
-}
+	#eyes {
+		position: absolute;
+		top: 7rem;
+		z-index: 4;
+		transform-style: preserve-3d;
+		animation: floatingEyes 5s 5s ease-in-out infinite alternate backwards;
+	}
 
-#mouth {
-	position: absolute;
-	top: 19.5rem;
-	z-index: 2;
-	transform: rotate(7deg);
-	transition-duration: 1s;
-	transform-style: preserve-3d;
-	animation: floatingMouth 5s 5s ease-in-out infinite alternate backwards;
-}
+	@keyframes floatingEyes {
+		50% {top: 7rem;}
+		100% {top: 8.5rem;}
+	}
 
-#mouth:hover {
-	transform: rotate(-5deg) translateX(.4rem) translateY(-.9rem);
-	transform-origin: 10% 30%;
-}
+	#nose {
+		position: absolute;
+		top: 13rem;
+		z-index: 3;
+		transform: rotate(-5deg);
+		transition-duration: 1s;
+		transform-style: preserve-3d;
+		animation: floatingNose 5s 5s ease-in-out infinite alternate backwards;
+	}
 
-@keyframes floatingMouth {
-	50% {top: 19.5rem;}
-	100% {top: 24rem;}
-}
+	#nose:hover {
+		transform: rotate(0deg) translateX(-.1rem) translateY(-1rem);
+		transform-origin: 10% 30%;
+	}
 
-#shadow {
-	position: absolute;
-	top: 29rem;
-	z-index: 1;
-	animation: shadowing 5s 5s ease-in-out infinite alternate backwards;
-	max-width: 16rem;
-}
+	@keyframes floatingNose {
+		50% {top: 13rem;}
+		100% {top: 16rem;}
+	}
 
-@keyframes shadowing {
-	50% {max-width: 16rem;}
-	100% {max-width: 20rem;}
-}
+	#mouth {
+		position: absolute;
+		top: 19.5rem;
+		z-index: 2;
+		transform: rotate(7deg);
+		transition-duration: 1s;
+		transform-style: preserve-3d;
+		animation: floatingMouth 5s 5s ease-in-out infinite alternate backwards;
+	}
+
+	#mouth:hover {
+		transform: rotate(-5deg) translateX(.4rem) translateY(-.9rem);
+		transform-origin: 10% 30%;
+	}
+
+	@keyframes floatingMouth {
+		50% {top: 19.5rem;}
+		100% {top: 24rem;}
+	}
+
+	#shadow {
+		position: absolute;
+		top: 29rem;
+		z-index: 1;
+		animation: shadowing 5s 5s ease-in-out infinite alternate backwards;
+		max-width: 16rem;
+	}
+
+	@keyframes shadowing {
+		50% {max-width: 16rem;}
+		100% {max-width: 20rem;}
+	}
 
 /* LAST PART - FOOTER */
