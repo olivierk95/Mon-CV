@@ -127,6 +127,7 @@ header {
 
 	.introduction {
 		margin-right: 2rem;
+		text-align: justify;
 	}
 
 	/* RIGHT SIDE */
@@ -146,8 +147,12 @@ header {
 		flex-direction: column;
 	}
 
-	.dropdown-subtitle {
+	.dropdown-button {
 		display: flex;
+	}
+
+	.dropdown-content {
+		display: none
 	}
 
 	/* PROFILE PICTURE */
