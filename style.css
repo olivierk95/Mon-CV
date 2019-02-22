@@ -10,19 +10,31 @@ body {
 }
 
 h1 {
-	color: #28231D;
+	color: #161411;
 	font-size: 1.2rem;
 	font-weight: 600;
 }
 
 h2 {
-	color: #28231D;
+	color:#161411;
 	font-size: 1rem;
 	font-weight: 300;
 }
 
+h3 {
+	color:#161411;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
 h5 {
 	font-weight: 300;
+	color: #161411;
+}
+
+button {
+	background: none;
+	border: none;
 }
 
 /* FIRST PART - HEADER */
@@ -93,17 +105,28 @@ header {
 
 	/* LEFT SIDE */
 	.info-left {
+		display: flex;
+		flex-direction: column;
 		width: 34vw;
 		margin-left: 3rem;
+		align-items: flex-end;
 	}
 
 	.title {
-		background-color: #DE3845;
-		color: white;
-		font-size: 1rem;
+		border-top: 1rem solid #DE3845;
+		width: max-content;
+	}
+
+	.title h1 {
+		color: #161411;
+		font-size: 1.1rem;
 		font-style: italic;
-		width: fit-content;
-		margin-bottom: .6rem;
+		position: relative;
+		top: -.9rem;
+	}
+
+	.introduction {
+		margin-right: 2rem;
 	}
 
 	/* RIGHT SIDE */
@@ -111,6 +134,20 @@ header {
 	.info-right {
 		width: 34vw;
 		margin-right: 3rem;
+		padding-top: 8rem;
+	}
+
+	.right-arrow {
+		width: 1.2rem;
+	}
+
+	.info-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.dropdown-subtitle {
+		display: flex;
 	}
 
 	/* PROFILE PICTURE */
